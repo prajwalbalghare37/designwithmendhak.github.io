@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.designwithmendhak.com</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            color: white;
+        }
+        
+        .container {
+            height: 100vh;
+            background: url('bg.jpg');
+            background: #555;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-clip: border-box;
+        }
+        
+        .navigation {
+            position: fixed;
+            top: 0;
+            height: 80px;
+            background: #222;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 999;
+        }
+        
+        #burger {
+            position: fixed;
+            top: 36px;
+            right: 25px;
+            display: none;
+            cursor: pointer;
+        }
+        
+        .primary-h {
+            width: 40px;
+            height: 5px;
+            background: white;
+        }
+        
+        .line-1 {
+            transform: translateY(-6px);
+        }
+        
+        .line-2 {
+            transform: translateY(0px);
+        }
+        
+        .line-3 {
+            transform: translateY(6px);
+        }
+        
+        .logo h1 {
+            position: fixed;
+            top: 20px;
+            left: 25px;
+            cursor: pointer;
+        }
+        
+        nav {
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            flex-direction: row;
+            z-index: 37;
+        }
+        
+        nav li {
+            list-style: none;
+        }
+        
+        nav li a {
+            text-decoration: none;
+            font-size: 24px;
+            margin: 10px 20px 10px 20px;
+        }
+        
+        nav li a:hover {
+            color: cyan;
+        }
+        
+        .show_it {
+            transform: translateX(0%);
+        }
+        
+        #home-section {
+            height: 100vh;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn {
+            height: 40px;
+            width: 130px;
+            background: none;
+            border: 2px solid white;
+            border-radius: 10px;
+            font-size: 18px;
+            margin: 18px 0;
+            cursor: pointer;
+        }
+        
+        #home-section h1 {
+            font-size: 50px;
+            margin: 10px 0px;
+        }
+        
+        #home-section span {
+            font-size: 50px;
+            color: rgb(0, 0, 0);
+            margin: 10px 0px;
+        }
+        
+        #home-section p {
+            width: 75%;
+            font-size: 19px;
+        }
+        
+        #project-section {
+            height: 100vh;
+            background: #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .projects-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-box {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 60px;
+        }
+        
+        h2 {
+            padding: 22px;
+        }
+        
+        img {
+            width: 220px;
+            height: 180px;
+        }
+        
+        footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+            background: #555;
+        }
+        
+        footer span {
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                right: 0px;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(-100%);
+                background: #333;
+                color: rgb(255, 255, 255);
+                transition: all 0.3s ease;
+            }
+            .logo h1 {
+                font-size: 50px;
+            }
+            nav li {
+                margin: 18px;
+            }
+            nav li a {
+                font-size: 40px;
+                color: rgb(255, 255, 255);
+            }
+            #burger {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 425px) {
+            #home-section {
+                padding: 90px 60px 60px 60px;
+            }
+            #home-section p {
+                width: 100%;
+                font-size: 19px;
+            }
+            .projects-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .project-box {
+                padding: 20px 0px;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                align-items: center;
+                justify-content: space-evenly;
+                margin: 0px;
+            }
+            img {
+                height: 160px;
+            }
+            footer {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
+                background: #555;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div class="logo">
+                <h1>DWM</h1>
+            </div>
+            <nav id="navbar">
+                <li><a href="#home-section">Home</a></li>
+                <li><a href="#project-section">Projects</a></li>
+                <li><a href="#service-section">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </nav>
+            <div id="burger" onclick="clicked()">
+                <h1 class="line-1 primary-h"></h1>
+                <h1 class="line-2 primary-h"></h1>
+                <h1 class="line-3 primary-h"></h1>
+            </div>
+        </div>
+        <section id="home-section">
+            <h1>Stalle<span>X</span></h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere consequatur sint nesciunt repudiandae corporis eligendi, error dolore cumque libero harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laborum sit expedita
+                dignissimos rerum veritatis asperiores? Dolorem, explicabo. In, facilis!</p>
+            <button class="btn">Start jurney</button>
+        </section>
+        <section id="project-section">
+            <div class="projects-list">
+                <div class="project-box">
+                    <!-- <img src="https://source.unsplash.com/1600x900/?coding,python" alt=""> -->
+                    <img src="python.jpg" alt="">
+                    <h2><a href="https://prajwalbalghare37.github.io/codewithmendhak.github.io/" target="_blank">Python Projects</a></h2>
+                </div>
+                <div class="project-box">
+                    <img src="www.png" alt="">
+                    <h2><a href="#" target="_blank">Web Development <br> Projects</a></h2>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <footer>
+            Copyright &copy; 2021 | <span> DESIGNWITHMENDHAK </span> | All rights reserved
+        </footer>
+    </div>
+    <script>
+        let navbar = document.getElementById('navbar');
+        let a = 0;
+        // clicked = () => {
+        //     navbar.classList.add("show_it");
+        // }
+        clicked = () => {
+            if (a == 0) {
+                navbar.classList.add("show_it");
+                a = 1;
+            } else {
+                navbar.classList.remove("show_it");
+                a = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>
